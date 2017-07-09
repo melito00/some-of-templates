@@ -1,4 +1,4 @@
-[*.{ts,js,jsx}]
+[*.{ts,tsx,js,jsx}]
 end_of_line = lf
 indent_stype = space
 indent_size = 2
