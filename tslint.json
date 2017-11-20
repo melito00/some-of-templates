@@ -1,7 +1,8 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
+      // npm install tslint-config-standard --save-dev
+      "tslint-config-standard"
     ],
     "jsRules": {},
     "rules": {},
