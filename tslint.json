@@ -5,6 +5,10 @@
       "tslint-config-standard"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+      "ordered-imports": true,
+      "prefer-const": true,
+      "max-classes-per-file": [true, 1]
+    },
     "rulesDirectory": []
 }
