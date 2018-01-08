@@ -2,7 +2,9 @@
     "defaultSeverity": "error",
     "extends": [
       // npm install tslint-config-standard --save-dev
-      "tslint-config-standard"
+      // "tslint-config-standard"
+      // npm install tslint-config-airbnb --save-dev
+      "tslint-config-airbnb"
     ],
     "jsRules": {},
     "rules": {
