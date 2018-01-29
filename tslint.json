@@ -8,6 +8,7 @@
     ],
     "jsRules": {},
     "rules": {
+      "import-name": false,
       "ordered-imports": true,
       "prefer-const": true,
       "max-classes-per-file": [true, 1]
