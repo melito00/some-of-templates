@@ -1,0 +1,7 @@
+--- fstab	2018-04-19 06:42:35.000000000 +0100
++++ fstab.new	2018-05-30 16:29:01.289699500 +0100
+@@ -3,3 +3,4 @@
+ 
+ # DO NOT REMOVE NEXT LINE. It remove cygdrive prefix from path
+ none / cygdrive binary,posix=0,noacl,user 0 0
++c:/z/home /home ntfs binary,noacl,auto 1 1

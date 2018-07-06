@@ -1,0 +1,14 @@
+--- pacman.conf	2018-02-12 09:38:07.000000000 +0000
++++ pacman.conf.new	2018-05-30 15:29:34.254046900 +0100
+@@ -69,6 +69,11 @@ LocalFileSigLevel = Optional
+ # repo name header and Include lines. You can add preferred servers immediately
+ # after the header, and they will be used before the default mirrors.
+ 
++[git-for-windows]
++SigLevel = Never
++#SigLevel = Optional TrustAll
++Server = https://dl.bintray.com/$repo/pacman/$arch
++
+ [mingw32]
+ Include = /etc/pacman.d/mirrorlist.mingw32
+ 

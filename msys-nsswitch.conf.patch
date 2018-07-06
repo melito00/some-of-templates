@@ -1,0 +1,20 @@
+--- nsswitch.conf	2018-04-19 06:42:35.000000000 +0100
++++ nsswitch.conf.new	2018-05-30 16:19:25.872901000 +0100
+@@ -1,11 +1,14 @@
+ # Begin /etc/nsswitch.conf
+ 
+-passwd: files db
+-group: files db
++#passwd: files db
++passwd: files
++#group: files db
++group: files
+ 
+ db_enum: cache builtin
+ 
+-db_home: cygwin desc
++#db_home: cygwin desc
++db_home: windows
+ db_shell: cygwin desc
+ db_gecos: cygwin desc
+ 
