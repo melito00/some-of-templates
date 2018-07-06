@@ -1,0 +1,60 @@
+// 既定の設定を上書きするには、このファイル内に設定を挿入します
+{
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.autoIndent": false,
+    "editor.fontFamily": "Cica",
+    "editor.fontSize": 16,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.lineHeight": 16,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "editor.occurrencesHighlight": false,
+    "editor.renderIndentGuides": true,
+    "editor.rulers": [
+        80, 100
+    ],
+    "editor.useTabStops": false, // Backspace で複数インデントが削除されないようにする
+    "editor.wordWrapColumn": 80,
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    "files.associations": {
+        "Vagrantfile": "ruby",
+        "*.sbt": "scala"
+    },
+    "git.path": "C:\\z\\msys64\\mingw64\\bin\\git.exe",
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[plaintext]": {
+        "editor.autoIndent": false
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "powershell.codeFormatting.openBraceOnSameLine": true,
+    "powershell.developer.editorServicesLogLevel": "Verbose",
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.enableProfileLoading": false,
+    "powershell.scriptAnalysis.enable": true,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "RemoteSigned", "-NoExit" ],
+    "typescript.referencesCodeLens.enabled": true,
+    // "editor.acceptSuggestionOnEnter": false,
+    // "editor.quickSuggestions": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.projectDetection.disableDetect": true,
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Espresso Soda",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+    "[scala]": {},
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "window.zoomLevel": 0,
+}

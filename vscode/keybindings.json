@@ -1,0 +1,99 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+shift+9",
+        "command": "extension.embraceParenthesis",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+s",
+        "command": "extension.embraceSquareBrackets",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "extension.embraceCurlyBrackets",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+a",
+        "command": "extension.embraceAngleBrackets",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+q",
+        "command": "extension.embraceSingleQuotes",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "extension.embraceDoubleQuotes",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "cursorEnd",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "cursorHome",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "editor.action.selectAll"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "editor.action.fontZoomReset"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "ctrl+numpad0",
+        "command": "editor.action.fontZoomReset"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "editor.action.fontZoomReset"
+    },
+    // {
+    //     "key": "ctrl+a",
+    //     "command": "extension.extendedCursorMove.cursorHome",
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "ctrl+e",
+    //     "command": "extension.extendedCursorMove.cursorEnd",
+    //     "when": "editorTextFocus"
+    // }
+]
