@@ -1,0 +1,43 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+shift+9",
+        "command": "extension.embraceParenthesis",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+s",
+        "command": "extension.embraceSquareBrackets",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "extension.embraceCurlyBrackets",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+a",
+        "command": "extension.embraceAngleBrackets",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+q",
+        "command": "extension.embraceSingleQuotes",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "extension.embraceDoubleQuotes",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    }
+]
