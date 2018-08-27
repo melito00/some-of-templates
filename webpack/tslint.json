@@ -1,0 +1,18 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+      // npm install tslint-config-standard --save-dev
+      // "tslint-config-standard"
+      // npm install tslint-config-airbnb --save-dev
+      "tslint-config-airbnb"
+    ],
+    "jsRules": {},
+    "rules": {
+      "import-name": false,
+      "max-classes-per-file": [true, 1],
+      "ordered-imports": true,
+      "prefer-const": true,
+      "semicolon": [true, "never"]
+    },
+    "rulesDirectory": []
+}

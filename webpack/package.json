@@ -1,0 +1,40 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --config tslint.json",
+    "build:dev": "cross-env TS_NODE_PROJECT=tsconfig-for-webpack.json webpack-cli --config webpack.config.ts --mode development",
+    "build:prod": "cross-env TS_NODE_PROJECT=tsconfig-for-webpack.json webpack-cli --config webpack.config.ts --mode production",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.4.1",
+    "@types/react-dom": "^16.0.6",
+    "electron": "^2.0.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "webpack": "^4.10.1"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^2.30.3",
+    "@types/node": "^10.1.4",
+    "@types/webpack": "^4.4.0",
+    "cross-env": "^5.1.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^4.3.0",
+    "ts-node": "^6.0.5",
+    "tsconfig-paths": "^3.3.2",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^2.8.4",
+    "webpack-cli": "^2.1.4"
+  }
+}
