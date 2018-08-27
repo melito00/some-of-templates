@@ -1,99 +1,72 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     {
-        "key": "ctrl+shift+9",
-        "command": "extension.embraceParenthesis",
-        "when": "editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+s",
-        "command": "extension.embraceSquareBrackets",
-        "when": "editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+l",
-        "command": "extension.embraceCurlyBrackets",
-        "when": "editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+a",
-        "command": "extension.embraceAngleBrackets",
-        "when": "editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+q",
-        "command": "extension.embraceSingleQuotes",
-        "when": "editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+o",
-        "command": "extension.embraceDoubleQuotes",
-        "when": "editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "cursorEnd",
-        "when": "editorTextFocus"
+        "key": "alt+a",
+        "command": "editor.action.selectAll",
+        "when": "textInputFocus"
     },
     {
         "key": "ctrl+a",
         "command": "cursorHome",
-        "when": "editorTextFocus"
+        "when": "textInputFocus"
     },
     {
-        "key": "ctrl+shift+a",
-        "command": "editor.action.selectAll"
+        "key": "alt+b",
+        "command": "workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.focus",
-        "when": "!terminalFocus"
+        "key": "ctrl+b",
+        "command": "cursorLeft",
+        "when": "textInputFocus"
     },
     {
-        "key": "ctrl+t",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
+        "key": "alt+e",
+        "command": "workbench.action.quickOpen"
+    }
+    {
+        "key": "ctrl+e",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
     },
     {
-        "key": "ctrl+numpad_add",
-        "command": "editor.action.fontZoomIn"
+        "key": "alt+f",
+        "command": "actions.find"
     },
     {
-        "key": "ctrl+shift+=",
-        "command": "editor.action.fontZoomIn"
+        "key": "ctrl+f",
+        "command": "cursorRight",
+        "when": "textInputFocus"
     },
     {
-        "key": "ctrl+=",
-        "command": "editor.action.fontZoomReset"
+        "key": "alt+n",
+        "command": "workbench.action.files.newUntitledFile"
     },
     {
-        "key": "ctrl+numpad_subtract",
-        "command": "editor.action.fontZoomOut"
+        "key": "ctrl+n",
+        "command": "cursorDown",
+        "when": "textInputFocus"
     },
     {
-        "key": "ctrl+shift+-",
-        "command": "editor.action.fontZoomOut"
+        "key": "alt+o",
+        "command": "workbench.action.files.openFile"
     },
     {
-        "key": "ctrl+-",
-        "command": "editor.action.fontZoomOut"
+        "key": "ctrl+o",
+        "command": "editor.action.insertLineBefore",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+numpad0",
-        "command": "editor.action.fontZoomReset"
+        "key": "alt+p",
+        "command": "workbench.action.quickOpen"
     },
     {
-        "key": "ctrl+0",
-        "command": "editor.action.fontZoomReset"
+        "key": "ctrl+p",
+        "command": "cursorUp",
+        "when": "textInputFocus"
     },
-    // {
-    //     "key": "ctrl+a",
-    //     "command": "extension.extendedCursorMove.cursorHome",
-    //     "when": "editorTextFocus"
-    // },
-    // {
-    //     "key": "ctrl+e",
-    //     "command": "extension.extendedCursorMove.cursorEnd",
-    //     "when": "editorTextFocus"
-    // }
+    {
+        "key": "shift+enter",
+        "command": "acceptSelectedSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    }
 ]
