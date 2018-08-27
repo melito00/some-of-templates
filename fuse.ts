@@ -1,28 +1,20 @@
-import { FuseBox, JSONPlugin } from 'fuse-box'
+import { FuseBox } from 'fuse-box';
 
-let isProduction = false
+const isProduction = process.env.NODE_ENV === 'production';
 
-console.log(process.env.NODE_ENV)
-if (process.env.NODE_ENV === 'production') {
-  isProduction = true
-}
-
-console.log('default: ' + isProduction)
+console.log('default: ' + isProduction);
 
 const fuse = FuseBox.init({
-  homeDir: 'src',
-  output: 'dist/$name.js',
+  homeDir: 'src/main',
+  output: 'dist/main/$name.js',
   sourceMaps: !isProduction,
   tsConfig: 'tsconfig.json',
   log: true,
   debug: true,
-  target: 'electron',
-  plugins : [
-    JSONPlugin()
-  ]
-})
+  target: 'server',
+});
 
-fuse.bundle('app1')
-  .instructions('> index.ts')
+fuse.bundle('index')
+  .instructions('> [index.ts]');
 
-fuse.run()
+fuse.run();
