@@ -1,0 +1,7 @@
+FROM alpine:latest
+MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
+
+RUN apk add bash
+
+CMD /bin/bash
+
