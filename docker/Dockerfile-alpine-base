@@ -1,7 +1,17 @@
 FROM alpine:latest
 MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
 
+ARG UID=501
+ARG GID=100
+ARG GROUPNAME=users
+ARG USERNAME=kyamada
+
 RUN apk add bash
+RUN adduser -u ${UID} -G ${GROUPNAME} -h /home/${USERNAME} -s /bin/bash -D ${USERNAME} \
+  && echo ${USERNAME}:kyamada01 | chpasswd
+
+USER ${USERNAME}
+WORKDIR /home/${USERNAME}
 
 CMD /bin/bash
 
