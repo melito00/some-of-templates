@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
+LABEL MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
 
 ARG UID=501
 ARG GID=100

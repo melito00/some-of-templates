@@ -1,4 +1,4 @@
 FROM 
-MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
+LABEL MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
 
 CMD /bin/bash
