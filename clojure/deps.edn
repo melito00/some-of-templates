@@ -1,0 +1,8 @@
+{
+  :aliases 
+  {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+           :main-opts ["-m" "rebel-readline.main"]}
+   :new {:extra-deps {seancorfield/clj-new {:mvn/version "0.9.0"}}
+         :main-opts ["-m" "clj-new.create"]}}
+}
+
