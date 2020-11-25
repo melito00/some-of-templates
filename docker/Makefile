@@ -3,6 +3,9 @@ VERSION:=0.0.1
 UDIR:=/home/kyamada
 WPATH:=work
 
+build:
+	docker build -t $(IMAGE):$(VERSION) ./
+
 run:
 	@echo $(PWD)
 	@echo $(IMAGE):$(VERSION)
