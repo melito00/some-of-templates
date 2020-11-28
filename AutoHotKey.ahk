@@ -1,63 +1,155 @@
-; IMPORTANT INFO ABOUT GETTING STARTED: Lines that start with a
-; semicolon, such as this one, are comments.  They are not executed.
+﻿; 左右 Alt キーの空打ちで IME の OFF/ON を切り替える
+;
+; 左 Alt キーの空打ちで IME を「英数」に切り替え
+; 右 Alt キーの空打ちで IME を「かな」に切り替え
+; Alt キーを押している間に他のキーを打つと通常の Alt キーとして動作
+;
+; Author:     karakaram   http://www.karakaram.com/alt-ime-on-off
 
-; This script has a special filename and path because it is automatically
-; launched when you run the program directly.  Also, any text file whose
-; name ends in .ahk is associated with the program, which means that it
-; can be launched simply by double-clicking it.  You can have as many .ahk
-; files as you want, located in any folder.  You can also run more than
-; one .ahk file simultaneously and each will get its own tray icon.
+; + : Shift
+; ^ : Ctrl
+; ! : Alt
+; # : Win
 
-; SAMPLE HOTKEYS: Below are two sample hotkeys.  The first is Win+Z and it
-; launches a web site in the default browser.  The second is Control+Alt+N
-; and it launches a new Notepad window (or activates an existing one).  To
-; try out these hotkeys, run AutoHotkey again, which will load this file.
+; sc03a::Capslock, sc079::変換, sc07b::無変換
 
-#z::Run www.autohotkey.com
+#Include C:\Users\kyamada\Documents\IME.ahk
 
-;^!n::
-;IfWinExist Untitled - Notepad
-;	WinActivate
-;else
-;	Run Notepad
-;return
+; Razer Synapseなど、キーカスタマイズ系のツールを併用しているときのエラー対策
+#MaxHotkeysPerInterval 350
 
-
-; Note: From now on whenever you run AutoHotkey directly, this script
-; will be loaded.  So feel free to customize it to suit your needs.
-
-; Please read the QUICK-START TUTORIAL near the top of the help file.
-; It explains how to perform common automation tasks such as sending
-; keystrokes and mouse clicks.  It also explains more about hotkeys.
-
-; vk1Dsc07B: 無変換
-; vkF3sc029: 半角/全角
-; vkF4sc029: 半角/全角
-
-AppsKey::Send {vk1Dsc07B}
-+AppsKey::Send +{vk1Dsc07B}
-^AppsKey::Send ^{vk1Dsc07B}
-
-;; For ThinkPad, PrintScreen key is located to right bottom
-PrintScreen::Send {vk1Dsc07B}
-+PrintScreen::Send +{vk1Dsc07B}
-^PrintScreen::Send ^{vk1Dsc07B}
-
-;vkF1::vk1Dsc07B
-;sc11D::vk1Dsc07B ;sc11D -> RControl
-
-;; For DREVO Calibur and HHKB 
-;RControl::Send {Escape}
-vkF1sc11D::Send {Escape}
-^[::Send {Escape}
-Escape::`
-+Escape::~
-^+sc11D::Run taskmgr.exe
+RWin::Send,{vkF0sc03A}
+^RWin::Send, ^{vk1Dsc07B}
++RWin::Send, +{vk1Dsc07B}
 
 XButton2::Home
 
-;F1::
-;	WinGet, vcurrentwindow, ID, A
-;	vimestate := DllCall("user32.dll\SendMessageA", "UInt", DllCall("imm32.dll\ImmGetDefaultIMEWnd", "Uint", vcurrentwindow), "UInt", 0x0283, "Int", 0x0005, "Int", 0)
-;	Msgbox, %vimestate% `n 0はOFF `n 1はON
-;	return
+F14::Send, {Ins}
+^F14::Send, ^{Ins}
++F14::Send, +{Ins}
+
+; 主要なキーを HotKey に設定し、何もせずパススルーする
+
+RControl::Escape
+^[::Send {Escape}
+; Escape::`
+; +Escape::~
+
+; 主要なキーを HotKey に設定し、何もせずパススルーする
+*~a::
+*~b::
+*~c::
+*~d::
+*~e::
+*~f::
+*~g::
+*~h::
+*~i::
+*~j::
+*~k::
+*~l::
+*~m::
+*~n::
+*~o::
+*~p::
+*~q::
+*~r::
+*~s::
+*~t::
+*~u::
+*~v::
+*~w::
+*~x::
+*~y::
+*~z::
+*~1::
+*~2::
+*~3::
+*~4::
+*~5::
+*~6::
+*~7::
+*~8::
+*~9::
+*~0::
+*~F1::
+*~F2::
+*~F3::
+*~F4::
+*~F5::
+*~F6::
+*~F7::
+*~F8::
+*~F9::
+*~F10::
+*~F11::
+*~F12::
+*~`::
+*~~::
+*~!::
+*~@::
+*~#::
+*~$::
+*~%::
+*~^::
+*~&::
+*~*::
+*~(::
+*~)::
+*~-::
+*~_::
+*~=::
+*~+::
+*~[::
+*~{::
+*~]::
+*~}::
+*~\::
+*~|::
+*~;::
+*~'::
+*~"::
+*~,::
+*~<::
+*~.::
+*~>::
+*~/::
+*~?::
+;*~Esc::
+*~Tab::
+*~Space::
+*~Left::
+*~Right::
+*~Up::
+*~Down::
+*~Enter::
+*~PrintScreen::
+*~Delete::
+*~Home::
+*~End::
+*~PgUp::
+*~PgDn::
+    Return
+
+; 上部メニューがアクティブになるのを抑制
+#IfWinNotActive, ahk_exe WindowsTerminal.exe
+{
+*~LAlt::Send {Blind}{vkE8}
+*~RAlt::Send {Blind}{vkE8}
+
+; 左 Alt 空打ちで IME を OFF
+LAlt up::
+    if (A_PriorHotkey == "*~LAlt")
+    {
+        IME_SET(0)
+    }
+    Return
+
+; 右 Alt 空打ちで IME を ON
+RAlt up::
+    if (A_PriorHotkey == "*~RAlt")
+    {
+        IME_SET(1)
+    }
+    Return
+}
