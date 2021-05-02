@@ -1,11 +1,12 @@
-FROM alpine:3.11.5
+# https://hub.docker.com/_/alpine
+FROM alpine:3.13.5
 LABEL MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
 
 ARG UID=501
 ARG GID=100
 ARG GROUPNAME=users
 ARG USERNAME=kyamada
-ARG USERPASSWORD=kyamada01
+ARG USERPASSWORD=password
 
 RUN apk add bash sudo
 RUN adduser -u ${UID} -G ${GROUPNAME} -h /home/${USERNAME} -s /bin/bash -D ${USERNAME} \
