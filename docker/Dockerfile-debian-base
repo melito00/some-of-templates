@@ -1,0 +1,28 @@
+# https://hub.docker.com/_/debian
+FROM debian:buster-slim
+LABEL MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
+
+ENV LANG C
+ARG DEBIAN_FRONTEND=noninteractive
+
+ARG UID=501
+ARG GID=100
+ARG GROUPNAME=users
+ARG USERNAME=kyamada
+ARG USERPASSWORD=password
+
+# apt-get install -yq --no-install-recommends \
+RUN apt-get update \
+  && apt-get install -yq --no-install-recommends \
+    openssl \
+    sudo \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+RUN useradd --uid ${UID} --gid ${GID} --create-home --home-dir /home/${USERNAME} --shell /bin/bash --password $(openssl passwd -1 "${USERPASSWORD}") ${USERNAME} \
+  && usermod -aG sudo ${USERNAME} \
+  && echo '%sudo ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers 
+
+USER ${USERNAME}
+WORKDIR /home/${USERNAME}
+
+CMD /bin/bash
