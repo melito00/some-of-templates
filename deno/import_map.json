@@ -1,0 +1,5 @@
+{
+    "imports": {
+        "std/": "./import_map.json"
+    }
+}
