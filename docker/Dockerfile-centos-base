@@ -1,0 +1,22 @@
+# https://hub.docker.com/_/debian
+FROM centos:centos7.9.2009
+LABEL MAINTAINER Kenji Yamada <kenji.yamada@gmail.com>
+
+ENV LANG C
+
+ARG UID=501
+ARG GID=100
+ARG GROUPNAME=users
+ARG USERNAME=kyamada
+ARG USERPASSWORD=password
+
+# apt-get install -yq --no-install-recommends \
+RUN yum -y update && yum clean all \
+  && yum -y install sudo openssl \
+  && useradd --uid ${UID} --gid ${GID} --create-home --home-dir /home/${USERNAME} --shell /bin/bash --password $(openssl passwd -1 "${USERPASSWORD}") ${USERNAME} \
+  && usermod -aG wheel ${USERNAME}
+
+USER ${USERNAME}
+WORKDIR /home/${USERNAME}
+
+CMD /bin/bash
