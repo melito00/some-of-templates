@@ -5,6 +5,7 @@
 ; Alt キーを押している間に他のキーを打つと通常の Alt キーとして動作
 ;
 ; Author:     karakaram   http://www.karakaram.com/alt-ime-on-off
+; curl -Lo IME.ahk https://raw.githubusercontent.com/karakaram/alt-ime-ahk/master/IME.ahk
 
 ; + : Shift
 ; ^ : Ctrl
