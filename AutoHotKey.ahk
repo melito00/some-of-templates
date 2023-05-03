@@ -147,6 +147,36 @@ RControl::Escape
 }
 }
 
+#IfWinActive, ahk_exe WindowsTerminal.exe
+{
+^!Space::
+{
+    Send, ^x
+    Sleep, 50
+    Send, @
+    Sleep, 50
+    Send, `%
+    Sleep, 50
+    Send, {Space}
+    Return
+}
+}
+
+#IfWinActive, ahk_exe WindowsTerminal.exe
+{
+!Enter::
+{
+    Send, ^x
+    Sleep, 50
+    Send, @
+    Sleep, 50
+    Send, m
+    Sleep, 50
+    Send, {Enter}
+    Return
+}
+}
+
 ; 上部メニューがアクティブになるのを抑制
 #IfWinNotActive, ahk_exe WindowsTerminal.exe
 {
