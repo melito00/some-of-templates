@@ -6,7 +6,7 @@
 ;
 ; Author:     karakaram   http://www.karakaram.com/alt-ime-on-off
 ;;; curl -Lo IME.ahk https://raw.githubusercontent.com/karakaram/alt-ime-ahk/master/IME.ahk
-; curl -Lo IME.ahk https://raw.githubusercontent.com/kdr-s/ime.ahk-v2/master/IME.ahk
+; curl.exe -LO https://raw.githubusercontent.com/k-ayaki/IMEv2.ahk/master/IMEv2.ahk
 
 ; + : Shift
 ; ^ : Ctrl
@@ -17,10 +17,11 @@
 
 #Requires AutoHotkey v2.0
 
-#Include C:\Users\kyamada\Documents\IME.ahk
+#Include C:\Users\kyamada\Documents\IMEv2.ahk
 
 ; Razer Synapseなど、キーカスタマイズ系のツールを併用しているときのエラー対策
-#MaxHotkeysPerInterval 350
+; #MaxHotkeysPerInterval 350
+A_MaxHotKeysPerInterval := 350
 
 RWin::Send "{vkF0sc03A}"
 ^RWin::Send  "^{vk1Dsc07B}"
@@ -32,9 +33,7 @@ F14::Send  "{Ins}"
 ^F14::Send  "^{Ins}"
 +F14::Send  "+{Ins}"
 
-; 主要なキーを HotKey に設定し、何もせずパススルーする
-
-RControl::Escape
+RControl::Send "{Escape}"
 ^[::Send "{Escape}"
 ; Escape::`
 ; +Escape::~
@@ -119,7 +118,7 @@ RControl::Escape
 *~>::
 *~/::
 *~?::
-;*~Esc::
+;*~Escape::
 *~Tab::
 *~Space::
 *~Left::
@@ -136,24 +135,29 @@ RControl::Escape
     Return
 
 ; 上部メニューがアクティブになるのを抑制
-#HotIfWinNotActive, ahk_exe WindowsTerminal.exe
+; #HotIfWinNotActive, ahk_exe WindowsTerminal.exe
+#HotIf !WinActive("ahk_exe WindowsTerminal.exe")
 {
 *~LAlt::Send "{Blind}{vkE8}"
 *~RAlt::Send "{Blind}{vkE8}"
 
 ; 左 Alt 空打ちで IME を OFF
 LAlt up::
+{
     if (A_PriorHotkey = "*~LAlt")
     {
         IME_SET(0)
     }
-    Return
+    ; Return
+}
 
 ; 右 Alt 空打ちで IME を ON
 RAlt up::
+{
     if (A_PriorHotkey = "*~RAlt")
     {
         IME_SET(1)
     }
-    Return
+    ; Return
+}
 }
