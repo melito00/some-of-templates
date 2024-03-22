@@ -32,9 +32,11 @@
   ;; Packages installed system-wide.  Users can also install packages
   ;; under their own account: use 'guix search KEYWORD' to search
   ;; for packages and 'guix install PACKAGE' to install a package.
-  (packages (append (list (specification->package "nss-certs"))
+  ;; (packages (append (list (specification->package "nss-certs"))
+  ;;                  %base-packages))
+  (packages (append (map specification->package
+                         '("nss-certs"))
                     %base-packages))
-
   ;; Below is the list of system services.  To search for available
   ;; services, run 'guix system search KEYWORD' in a terminal.
   (services
